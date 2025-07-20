@@ -21,6 +21,6 @@ export default function getImagesByQuery(query) {
             return;
         };
         
-        return response.data.value;
-    });
+        return response.data.hits;
+    }).catch(error => { return error })
     }
