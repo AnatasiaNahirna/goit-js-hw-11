@@ -11,7 +11,8 @@ export default function getImagesByQuery(query) {
             orientation: "horizontal",
             safesearch: true,
         }
-    }).then((response) => {
+    })
+        .then((response) => {
         if (response.data.hits.length === 0) {
             iziToast.show({
                 message: 'Sorry, there are no images matching your search query. Please try again!',
@@ -22,5 +23,6 @@ export default function getImagesByQuery(query) {
         };
         
         return response.data.hits;
-    }).catch(error => { return error })
+        })
+        .catch(error => { return error })
     }

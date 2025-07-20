@@ -3,8 +3,6 @@ import markup from "./js/render-functions"
 import {clearGallery, showLoader, hideLoader} from "./js/render-functions"
 
 const form = document.querySelector(".form");
-const container = document.querySelector(".container");
-container.insertAdjacentHTML("beforeend", "<ul class='gallery'>");
 
 form.addEventListener("submit", (ev) => {
     ev.preventDefault()
@@ -12,7 +10,7 @@ form.addEventListener("submit", (ev) => {
     if (!search) {
         return;
     };
-    
+
     showLoader()
     clearGallery()
     getImages(search)
