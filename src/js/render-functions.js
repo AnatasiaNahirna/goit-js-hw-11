@@ -28,9 +28,9 @@ export function clearGallery() {
 }
 
 export function showLoader() {
-    document.querySelector(".container").insertAdjacentHTML("beforeend", "<span class='loader'></span>");
+    document.querySelector(".loader").classList.remove("visually-hidden");
  }
 
 export function hideLoader() {
-    document.querySelector(".loader").remove();
+    document.querySelector(".loader").classList.add("visually-hidden");
 }
