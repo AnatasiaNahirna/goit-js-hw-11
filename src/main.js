@@ -10,5 +10,5 @@ form.addEventListener("submit", (ev) => {
         return;
     };
     getImages(search)
-        .then((images) => { console.log(images) });
+        .then((images) => { return markup(images) });
 })

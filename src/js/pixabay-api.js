@@ -11,15 +11,16 @@ export default function getImagesByQuery(query) {
             orientation: "horizontal",
             safesearch: true,
         }
-    }).then((images) => {
-        if (images.data.hits.length === 0) {
+    }).then((response) => {
+        if (response.data.hits.length === 0) {
             iziToast.show({
                 message: 'Sorry, there are no images matching your search query. Please try again!',
                 messageColor: "#fff",
                 backgroundColor: "#EF4040"
             });
+            return;
         };
         
-        return images;
+        return response.data.value;
     });
     }
