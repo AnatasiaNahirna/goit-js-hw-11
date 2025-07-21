@@ -1,3 +1,5 @@
+import iziToast from "izitoast";
+import "izitoast/dist/css/iziToast.min.css";
 import getImages from "./js/pixabay-api"
 import markup from "./js/render-functions"
 import {clearGallery, showLoader, hideLoader} from "./js/render-functions"
@@ -11,12 +13,19 @@ form.addEventListener("submit", (ev) => {
         return;
     };
 
-    showLoader()
-    clearGallery()
-
-    setTimeout(() => {
+    showLoader();
+    clearGallery();
     getImages(search)
         .then((images) => { return markup(images) })
-        .catch((error) => {return error})
-    hideLoader()},1000)
-})
+        .catch((error) => { 
+            if (!error === undefined) {
+                return iziToast.show({
+                message: 'Error happened',
+                messageColor: "#fff",
+                backgroundColor: "#EF4040",
+                position: "topRight",
+            });
+            }
+         })
+        .finally(() => {hideLoader()})
+});
