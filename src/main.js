@@ -13,7 +13,10 @@ form.addEventListener("submit", (ev) => {
 
     showLoader()
     clearGallery()
+
+    setTimeout(() => {
     getImages(search)
-        .then((images) => { return markup(images) });
-    hideLoader()
+        .then((images) => { return markup(images) })
+        .catch((error) => {return error})
+    hideLoader()},2000)
 })

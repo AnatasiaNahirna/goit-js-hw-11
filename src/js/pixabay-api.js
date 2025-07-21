@@ -17,7 +17,8 @@ export default function getImagesByQuery(query) {
             iziToast.show({
                 message: 'Sorry, there are no images matching your search query. Please try again!',
                 messageColor: "#fff",
-                backgroundColor: "#EF4040"
+                backgroundColor: "#EF4040",
+                position: "topRight",
             });
             return;
         };
