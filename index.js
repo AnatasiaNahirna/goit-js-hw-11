@@ -8,5 +8,5 @@ import{a as d,i as m,S as f}from"./assets/vendor-D8_O3--j.js";(function(){const 
         <div class="stats"><p class="stats-name">Downloads</p><p class="stats-value">${u}</p></div>
         </div>
         </a>
-        </li>`}).join("");t.insertAdjacentHTML("beforeend",a),g.refresh()}function h(){document.querySelector(".gallery").innerHTML=""}function v(){document.querySelector(".loader").classList.remove("visually-hidden")}function L(){document.querySelector(".loader").classList.add("visually-hidden")}const b=document.querySelector(".form");b.addEventListener("submit",r=>{r.preventDefault();const t=r.currentTarget.elements["search-text"].value.trim();t&&(v(),h(),setTimeout(()=>{p(t).then(a=>y(a)).catch(a=>a),L()},2e3))});
+        </li>`}).join("");t.insertAdjacentHTML("beforeend",a),g.refresh()}function h(){document.querySelector(".gallery").innerHTML=""}function v(){document.querySelector(".loader").classList.remove("visually-hidden")}function L(){document.querySelector(".loader").classList.add("visually-hidden")}const b=document.querySelector(".form");b.addEventListener("submit",r=>{r.preventDefault();const t=r.currentTarget.elements["search-text"].value.trim();t&&(v(),h(),setTimeout(()=>{p(t).then(a=>y(a)).catch(a=>a),L()},1e3))});
 //# sourceMappingURL=index.js.map
