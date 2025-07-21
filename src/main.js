@@ -18,5 +18,5 @@ form.addEventListener("submit", (ev) => {
     getImages(search)
         .then((images) => { return markup(images) })
         .catch((error) => {return error})
-    hideLoader()},2000)
+    hideLoader()},1000)
 })
