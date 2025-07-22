@@ -3,7 +3,7 @@ import "simplelightbox/dist/simple-lightbox.min.css";
 
 let galleryBox = new SimpleLightbox('.gallery a');
 
-export default function createGallery(images) {
+export function createGallery(images) {
     const gallery = document.querySelector(".gallery");
     const markup = images.map((image) => {
         const { webformatURL, largeImageURL, tags, likes, views, comments, downloads } = image;

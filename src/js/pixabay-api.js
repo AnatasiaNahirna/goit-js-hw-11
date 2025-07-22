@@ -13,16 +13,17 @@ export default function getImagesByQuery(query) {
         }
     })
         .then((response) => {
-        if (response.data.hits.length === 0) {
-            return iziToast.show({
+            if (response.data.hits.length === 0) {
+                iziToast.show({
                 message: 'Sorry, there are no images matching your search query. Please try again!',
                 messageColor: "#fff",
                 backgroundColor: "#EF4040",
                 position: "topRight",
-            });
+                });
+                return response.data.hits;
         };
         
         return response.data.hits;
         })
-        .catch(error => { return })
+        .catch(error => { throw error })
     }
